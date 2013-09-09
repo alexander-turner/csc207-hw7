@@ -48,6 +48,35 @@ public class SampleMethods {
     } // expt(int,int)
 
     /**
+     * Compute x^p.
+     * 
+     * @param x
+     *   a real number
+     * @param p
+     *   a non-negative integer
+     * @return x^p
+     */
+    public static double expt(double x, int p) {
+	// Base case: When p = 0, result is 1
+	if (p == 0) {
+	    return 1;
+	}
+	// Base case: When p = 1, result is x
+	else if (p == 1) {
+	    return x;
+	}
+	// Recursive case: When p is 2k, x^(2k) = (x^k) * (x^k)
+	else if (p % 2 == 0) {
+	    double tmp = expt(x, p/2);
+	    return tmp*tmp;
+	}
+	// Recursive case: When p is odd, result is x*(x^(p-1))
+	else  {
+	    return expt(x * x, (p - 1) / 2);
+	} 
+    } // expt(double,int)
+    
+    /**
      * Remove all of the instances of the letter 'a' from a string.
      * 
      * @param str
