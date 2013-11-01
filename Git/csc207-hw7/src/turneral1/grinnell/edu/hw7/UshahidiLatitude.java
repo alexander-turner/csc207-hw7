@@ -18,7 +18,7 @@ public class UshahidiLatitude {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-	UshahidiWebClient client = new UshahidiWebClient("https://farmersmarket.crowdmap.com/", 10);
+	UshahidiWebClient client = new UshahidiWebClient("https://farmersmarket.crowdmap.com/", 15);
 	DoublyLinkedList<UshahidiIncident> list = new DoublyLinkedList<UshahidiIncident>();
 	DoublyLinkedListCursor<UshahidiIncident> cursor;
 	// distance is the allowed range for longitude and latitude
@@ -45,6 +45,9 @@ public class UshahidiLatitude {
 	    averageLong /= count;
 	    averageLat /= count;
 	} // else
+
+	System.out.println("Average longitude: " + averageLong);
+	System.out.println("Average latitude: " + averageLat);
 	
 	// Select the nodes that fall within distance of the centers.
 	Predicate<UshahidiIncident> testLocation = 

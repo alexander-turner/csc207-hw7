@@ -248,7 +248,7 @@ public class DoublyLinkedList<T> implements ListOf<T> {
 	DoublyLinkedList<T> list = new DoublyLinkedList<T>();
 	DoublyLinkedListCursor<T> temp;
 
-	for(temp = (DoublyLinkedListCursor<T>) list.front(); hasNext(temp);
+	for(temp = (DoublyLinkedListCursor<T>) this.front(); hasNext(temp);
 		advance(temp)) {
 	    // if the value satisfies pred, select the node.
 	    if (pred.test(get(temp))) {
